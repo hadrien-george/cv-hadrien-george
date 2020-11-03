@@ -1,0 +1,128 @@
+@import '../assets/scss/variables';
+
+.office-background {
+  display: inline-block;
+  width: 100%;
+  min-height: 500px;
+  filter: brightness(50%);
+  background-image: url('../assets/images/office-1209640_1920.jpg');
+  background-size: cover;
+  background-position: center top;
+}
+
+.wrapper {
+  width: 100%;
+}
+
+h1 {
+  position: absolute;
+  top: 155px;
+  text-align: center;
+  color: $white-bg;
+  font-size: 66px;
+  width: 100%;
+
+  @media (max-width: 780px) {
+    font-size: 55px;
+  }
+
+  @media (max-width: 580px) {
+   font-size: 45px; 
+  }
+}
+
+h2 {
+  text-transform: uppercase;
+  position: absolute;
+  top: 250px;
+  text-align: center;
+  color: $secondary;
+  font-size: 34px;
+  font-family: 'Jura', sans-serif;
+  font-weight: unset;
+  width: 100%;
+
+  @media (max-width: 780px) {
+    font-size: 29px;
+    top: 239px;
+  }
+
+  @media (max-width: 580px) {
+    font-size: 23px;
+    top: 229px;
+  }
+}
+
+.profile-picture {
+  &-container {
+    position: absolute;
+    top: $first-background-height;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: $profile-picture-size;
+    height: $profile-picture-size;
+    overflow: hidden;
+    border-radius: 50%;
+    border: solid 12px $white-bg;
+    z-index: 2;
+  }
+
+  &-img {
+    width: auto;
+    height: 100%;
+  }
+}
+
+.linkedin {
+  position: absolute;
+  top: calc(#{$first-background-height} + (#{$profile-picture-size} / 2) + #{linkedin-top-position});
+  left: 50%;
+  transform: translateX(-50%) scale(1);
+  width: $linkedin-size;
+  height: $linkedin-size;
+  pointer-events: bouding-box;
+  transition: all .2s ease-in-out;
+  border-radius: 50%;
+
+  &:hover {
+    left: 50%;
+    fill: $secondary;
+    transform: translateX(-50%) scale(1.2);
+    background-color: black;
+    border: solid 1px black;
+  }
+}
+
+.first-content {
+  display: inline-block;
+  background: $white-bg;
+  width: 100%;
+  height: $first-content-height;
+  z-index: 1;
+}
+
+h3, .experience-title {
+  text-transform: uppercase;
+  display: inline-block;
+  margin: calc((#{$profile-picture-size} / 2) + #{$experience-title-top-position}) 0 15px $experience-relative-left-position;
+  font-size: 32px;
+
+  @media (max-width: 780px) {
+    font-size: 28px;
+    margin-left: $experience-absolute-left-position;
+  }
+
+  @media (max-width: 580px) {
+    font-size: 23px;
+  }
+}
+
+.underline {
+  width: 50px;
+  border-bottom: solid 4px $secondary;
+  margin-left: $experience-relative-left-position;
+
+  @media (max-width: 780px) {
+    margin-left: $experience-absolute-left-position;
+  }
+}
